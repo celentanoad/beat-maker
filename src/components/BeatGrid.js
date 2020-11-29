@@ -5,8 +5,8 @@ import '../App.css';
 const BeatGrid = (props) => {
     return ( 
        <div className='Beat-grid'>
-        {props.sounds.map((sound, idx) => {
-            return <SoundRow sound={sound} id={idx} />
+        {props.sounds.map((sound) => {
+            return <SoundRow sound={sound} id={sound.id} playing={props.playing}/>
         })}
        </div>
      );
