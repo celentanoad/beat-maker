@@ -21,15 +21,17 @@ const sounds = [
 function App() {
 
   const [playing, setPlaying] = useState(false);
+  const [bpm, setBpm] = useState(100);
 
   const handleClick = () => {
     if (playing) setPlaying(false);
     else setPlaying(true)
   }
+
   return (
     <div className="App">
-      <button onClick={handleClick}>Play</button>
-      <BeatGrid sounds={sounds} playing={playing}/>
+      <BeatGrid sounds={sounds} playing={playing} time={bpm}/>
+      <button onClick={handleClick}> {playing? <p>Stop</p> : <p>Play</p>}</button>
     </div>
   );
 }

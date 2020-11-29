@@ -7,7 +7,7 @@ const Beat = (props) => {
     const [color, setColor] = useState('white');
     const [active, setActive] = useState(false);
 
-    const playBeat = new Howl({
+    const curentSound = new Howl({
         src: props.sound.src
     });
 
@@ -21,8 +21,15 @@ const Beat = (props) => {
         }
     }
 
-    if (active) playBeat.play();
-    if (!props.playing) playBeat.stop();
+    const playBeat = () => {
+        curentSound.play()
+    }
+
+    if (active) setTimeout(function() {
+        playBeat();
+    }, props.time)
+
+    if (!props.playing) curentSound.stop();
 
     return ( 
         <div className='Beat' style={{backgroundColor: color}} onClick={toggleBeat}>

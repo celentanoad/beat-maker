@@ -6,7 +6,7 @@ const BeatGrid = (props) => {
     return ( 
        <div className='Beat-grid'>
         {props.sounds.map((sound) => {
-            return <SoundRow sound={sound} id={sound.id} playing={props.playing}/>
+            return <SoundRow time={props.time} sound={sound} id={sound.id} playing={props.playing}/>
         })}
        </div>
      );
