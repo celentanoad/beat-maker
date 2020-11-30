@@ -3,9 +3,9 @@ import Beat from './Beat';
 import '../App.css';
 
 const SoundRow = (props) => {
-    let increment = 1000
+    let increment = 0
     const getIncrement = (num) => {
-       return increment * num;
+       return increment + (num * 100);
     }
 
     return ( 

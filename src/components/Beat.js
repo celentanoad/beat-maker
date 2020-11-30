@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../App.css';
 import { Howl, Howler } from 'howler';
 
@@ -24,7 +24,7 @@ const Beat = (props) => {
     const playBeat = () => {
         curentSound.play()
     }
-
+    
     if (active) setTimeout(function() {
         playBeat();
     }, props.time)
